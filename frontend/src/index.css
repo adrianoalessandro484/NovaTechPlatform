@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+/*
+ * NovaPortal - Design tokens (Tailwind CSS v4).
+ * Paleta corporativa "NovaTech" y utilidades de accesibilidad.
+ */
+@theme {
+  --color-brand-50: #eef5ff;
+  --color-brand-100: #d9e8ff;
+  --color-brand-200: #bcd7ff;
+  --color-brand-300: #8ebdff;
+  --color-brand-400: #5899ff;
+  --color-brand-500: #337dff;
+  --color-brand-600: #1f5cf5;
+  --color-brand-700: #1847e1;
+  --color-brand-800: #1a3bb6;
+  --color-brand-900: #1b378f;
+  --color-brand-950: #142357;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Indicador de foco visible para navegacion por teclado (ISO 9241 / WCAG 2.4.7). */
+:focus-visible {
+  outline: 3px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* Respeta la preferencia de movimiento reducido (accesibilidad). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
